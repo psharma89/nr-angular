@@ -1,3 +1,4 @@
+})(window.angular, window.NREUM);
 
 
 (function(angular, NREUM) {
@@ -71,24 +72,25 @@
  
 
   var newrelicTiming = new NewrelicTiming();
+  var module = angular.module('newrelic-timing', []);
+  
+  // var module = angular.module('newrelic-timing', []).
+  //   config(function($httpProvider) {
+  //     $httpProvider.interceptors.push(function($q) {
+  //       return {
 
-  var module = angular.module('newrelic-timing', []).
-    config(function($httpProvider) {
-      $httpProvider.interceptors.push(function($q) {
-        return {
+  //         response: function (response) {
+  //           return response || $q.when(response);
+  //         },
 
-          response: function (response) {
-            return response || $q.when(response);
-          },
-
-          // On response failture
-          responseError: function (rejection) {
-            // console.log(rejection);
-            return $q.reject(rejection);
-          }
-        };
-      });
-  });
+  //         // On response failture
+  //         responseError: function (rejection) {
+  //           // console.log(rejection);
+  //           return $q.reject(rejection);
+  //         }
+  //       };
+  //     });
+  // });
 
   if (typeof module.run !== 'function') {
     return;
