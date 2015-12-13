@@ -1,4 +1,3 @@
-})(window.angular, window.NREUM);
 
 
 (function(angular, NREUM) {
