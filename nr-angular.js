@@ -131,7 +131,7 @@
     return function(exception, cause) {
       exception.message += ' (caused by "' + cause + '")';
       console.log("Caught error: " + exception);
-      _this.NREUM.noticeError(exception);
+      window.NREUM.noticeError(exception);
     };
   });
 
