@@ -16,3 +16,12 @@ Angular - NR Insights integration for timing data
         'newrelic-timing',
         'ui.bootstrap' ] );
 	```
+
+
+
+3. NRQL queries:
+```
+SELECT average(renderTime) FROM PageAction FACET url SINCE 1 hour AGO TIMESERIES
+SELECT average(appTime) FROM PageAction FACET url SINCE 1 hour AGO TIMESERIES
+SELECT average(appTime), average(renderTime) FROM PageAction WHERE url='/menu/pizza' SINCE 1 hour AGO TIMESERIES
+```
