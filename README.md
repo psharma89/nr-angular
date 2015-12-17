@@ -1,7 +1,7 @@
 # nr-angular
 Angular - NR Insights integration for timing data
 
-
+Tested with version 1.5.0-rc.0 
 
 1. Add nr-angular.js
 	```
