@@ -71,7 +71,13 @@
  
 
   var newrelicTiming = new NewrelicTiming();
-  var module = angular.module('newrelic-timing', []);
+  var module = angular.module('newrelic-timing', []).factory('$exceptionHandler', function() {
+    return function(exception, cause) {
+      exception.message += ' (caused by "' + cause + '")';
+      console.log("Caught error: " + exception);
+      NREUM.noticeError(exception);
+    };
+  });
   
   // var module = angular.module('newrelic-timing', []).
   //   config(function($httpProvider) {
@@ -127,15 +133,7 @@
   }]);
 
 
-  angular.module('exceptionOverride', []).factory('$exceptionHandler', function() {
-    return function(exception, cause) {
-      exception.message += ' (caused by "' + cause + '")';
-      console.log("Caught error: " + exception);
-      window.NREUM.noticeError(exception);
-    };
-  });
 
-  
 
 
     
