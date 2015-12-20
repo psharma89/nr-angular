@@ -50,6 +50,7 @@
       var navEnd = this.measure('navEnd', 'navStart');
       var renderTime = this.measure('pageRendered', 'navStart');
       this.NREUM.addPageAction('Route', {'url': fragmentName, 'appTime': navEnd, 'renderTime': renderTime - this.debounceTime});
+      this.marks['navStart'] = null;
     };
 
     this.checkBeaconRequirements = function() {
