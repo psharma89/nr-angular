@@ -11,10 +11,7 @@ Tested with version 1.5.0-rc.0
 
 	```
 	var app = angular.module( "app", [
-        'breeze.angular',
-        'ui.router',
-        'newrelic-timing',
-        'ui.bootstrap' ] );
+        'newrelic-timing' ] );
 	```
 
 
