@@ -53,8 +53,8 @@
       myInteraction.setName(fragmentName);
       var navEnd = this.measure('navEnd', 'navStart');
       var renderTime = this.measure('pageRendered', 'navStart');
-      myInteraction.setAttribute('appTime': navEnd);
-      myInteraction.setAttribute('renderTime': renderTime - this.debounceTime);
+      myInteraction.setAttribute('appTime', navEnd);
+      myInteraction.setAttribute('renderTime', renderTime - this.debounceTime);
       this.marks['navStart'] = null;
     };
 
